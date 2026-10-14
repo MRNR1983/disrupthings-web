@@ -170,7 +170,7 @@ footer a { text-decoration: none; }
 .wrap { position: relative; z-index: 1; }
 .mechanism { position: fixed; inset: 0; z-index: 0; pointer-events: none; display: flex; align-items: center; justify-content: center; overflow: hidden; opacity: 0; transition: opacity 800ms ease; }
 .mechanism.ready { opacity: 1; }
-.mechanism svg { width: min(78vw, 760px); height: auto; max-height: 86vh; overflow: visible; transform-origin: 50% 50%; will-change: transform; }
+.mechanism svg { width: min(64vw, 620px); height: auto; max-height: 86vh; overflow: visible; transform-origin: 50% 50%; will-change: transform; }
 .mechanism .layer path, .mechanism .marks path { fill: none; stroke: var(--accent); stroke-width: 1.2; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
 .mechanism .layer path { opacity: 0.2; transition: opacity 900ms ease; }
 .mechanism.done .layer path { opacity: 1; }
@@ -179,5 +179,5 @@ footer a { text-decoration: none; }
 .mechanism .grid { transition: opacity 600ms ease; }
 .mechanism .grid-line { fill: none; stroke: var(--accent); stroke-width: 0.6; opacity: 0.06; }
 .mechanism .jewel { fill: var(--accent); fill-opacity: 0; transition: fill-opacity 600ms ease; } .mechanism.done .jewel { fill-opacity: 0.8; }
-@media (max-width: 860px) { .mechanism svg { width: 112vw; } .mechanism .layer path { opacity: 0.14; } .mechanism.done .layer path { opacity: 1; } }
+@media (max-width: 860px) { .mechanism svg { width: 96vw; } .mechanism .layer path { opacity: 0.14; } .mechanism.done .layer path { opacity: 1; } }
 .credit { font-size: 0.75rem; }

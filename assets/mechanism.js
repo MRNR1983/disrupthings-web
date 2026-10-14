@@ -6,6 +6,9 @@
   var cta = document.querySelector(host.getAttribute("data-dock-at"));
   var DOCK = window.innerWidth < 600 ? 90 : 150;
   var GAP = 14;
+  var GROW = 0.9;
+  var SHRINK = 0.4;
+  var SPIN = 0.01;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function el(name, attrs, parent) {
@@ -69,6 +72,8 @@
       var len = 0;
       try { len = L.path.getTotalLength(); } catch (e) { len = 0; }
       L.len = len;
+      var pb = L.path.getBBox();
+      L.c = [pb.x + pb.width / 2, pb.y + pb.height / 2];
       L.path.style.strokeDasharray = len.toFixed(0);
       var angle = (i / count) * Math.PI * 2 - Math.PI / 2;
       var reach = 1050 + (i % 3) * 180;
@@ -90,22 +95,41 @@
     var smoothing = false;
     var running = false;
     var t0 = 0;
+    var escAngle = 0;
+    var escBase = 0;
+    var spinning = false;
+    var last = 0;
+
+    function spin(now) {
+      if (running || reduce || document.hidden) { spinning = false; last = 0; return; }
+      if (last) escAngle -= (now - last) * SPIN;
+      last = now;
+      rotate(m.rot.escape, data.escape, escAngle);
+      requestAnimationFrame(spin);
+    }
+    function startSpin() {
+      if (spinning || running || reduce || document.hidden) return;
+      spinning = true;
+      requestAnimationFrame(spin);
+    }
 
     function compose() {
       m.layers.forEach(function (L) {
         var t = ease(clamp((progress - L.start) / 0.33));
         var k = 1 - t;
-        L.layer.setAttribute("transform", "translate(" + (L.dx * k).toFixed(1) + " " + (L.dy * k).toFixed(1) + ")");
+        var s = (1 + GROW * k).toFixed(4);
+        L.layer.setAttribute("transform", "translate(" + (L.dx * k).toFixed(1) + " " + (L.dy * k).toFixed(1) + ") translate(" + L.c[0] + " " + L.c[1] + ") scale(" + s + ") translate(" + (-L.c[0]) + " " + (-L.c[1]) + ")");
         L.path.style.strokeDashoffset = (L.len * k).toFixed(0);
       });
       var dock = reduce ? 1 : ease(clamp((progress - 0.86) / 0.12));
-      var tx = 0, ty = 0, sc = 1;
+      var base = reduce ? 1 : 1 - SHRINK * ease(clamp(progress / 0.84));
+      var tx = 0, ty = 0, sc = base;
       if (dock > 0 && cta) {
         var b = cta.getBoundingClientRect();
         var w = m.svg.getBoundingClientRect().width / (m.scale || 1);
         var unit = w / data.viewBox[2];
         var target = DOCK / (m.focus[2] * unit);
-        sc = 1 + (target - 1) * dock;
+        sc = base + (target - base) * dock;
         var fx = (m.focus[0] - (data.viewBox[0] + data.viewBox[2] / 2)) * unit * sc;
         var fy = (m.focus[1] - (data.viewBox[1] + data.viewBox[3] / 2)) * unit * sc;
         var half = m.focus[3] * unit * target / 2;
@@ -141,7 +165,7 @@
       var flick = inout((beatPos - beats) / 0.1);
       var side = beats % 2 ? 1 : -1;
       rotate(m.rot.fork, data.fork, (-side + 2 * side * flick) * 6);
-      rotate(m.rot.escape, data.escape, -(beats + flick) * 6);
+      rotate(m.rot.escape, data.escape, escBase - (beats + flick) * 6);
       requestAnimationFrame(tick);
     }
 
@@ -149,7 +173,8 @@
       if (reduce) on = false;
       if (on === running) return;
       running = on;
-      if (on) { t0 = 0; requestAnimationFrame(tick); }
+      if (on) { t0 = 0; escBase = escAngle; requestAnimationFrame(tick); }
+      else { escAngle = escBase; startSpin(); }
     }
 
     function endPoint() {
@@ -172,7 +197,7 @@
       }
       if (!smoothing) { smoothing = true; requestAnimationFrame(smooth); }
     }
-    function onScroll() { update(); }
+    function onScroll() { update(); startSpin(); }
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
@@ -183,6 +208,7 @@
     }
     compose();
     setRunning(progress >= 0.98 && !document.hidden);
+    startSpin();
     host.classList.add("ready");
   }
 
