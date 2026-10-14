@@ -4,7 +4,8 @@
   var target = document.querySelector(host.getAttribute("data-assemble-at"));
   var NS = "http://www.w3.org/2000/svg";
   var cta = document.querySelector(host.getAttribute("data-dock-at"));
-  var DOCK = window.innerWidth < 600 ? 170 : 210;
+  var DOCK = window.innerWidth < 600 ? 90 : 150;
+  var GAP = 14;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function el(name, attrs, parent) {
@@ -41,8 +42,8 @@
     el("path", { d: "M" + data.escape[0] + " " + data.escape[1] + "L" + data.balance[0] + " " + data.balance[1], "class": "dim" }, marks);
 
     var world = el("g", { "class": "world" }, svg);
-    var rot = { balance: [], fork: [], escape: [] };
-    var groupOf = { balance: "balance", axle: "balance", impulse: "balance", spring: "balance", fork: "fork", jewels: "fork", escapeWheel: "escape" };
+    var rot = { balance: [], fork: [], escape: [], spring: [] };
+    var groupOf = { balance: "balance", axle: "balance", impulse: "balance", spring: "spring", fork: "fork", jewels: "fork", escapeWheel: "escape" };
     var layers = [];
 
     var all = data.parts.slice();
@@ -61,7 +62,7 @@
 
     host.appendChild(svg);
     var bb = world.getBBox();
-    var focus = [bb.x + bb.width / 2, bb.y + bb.height / 2, Math.max(bb.width, bb.height)];
+    var focus = [bb.x + bb.width / 2, bb.y + bb.height / 2, Math.max(bb.width, bb.height), bb.width, bb.height];
 
     var count = layers.length;
     layers.forEach(function (L, i) {
@@ -107,8 +108,11 @@
         sc = 1 + (target - 1) * dock;
         var fx = (m.focus[0] - (data.viewBox[0] + data.viewBox[2] / 2)) * unit * sc;
         var fy = (m.focus[1] - (data.viewBox[1] + data.viewBox[3] / 2)) * unit * sc;
-        tx = (b.left + b.width / 2 - window.innerWidth / 2 - fx) * dock;
-        ty = (b.top + b.height / 2 - window.innerHeight / 2 - fy) * dock;
+        var half = m.focus[3] * unit * target / 2;
+        var cx = b.right - half;
+        var cy = b.top - GAP - m.focus[4] * unit * target / 2;
+        tx = (cx - window.innerWidth / 2 - fx) * dock;
+        ty = (cy - window.innerHeight / 2 - fy) * dock;
       }
       m.scale = sc;
       m.svg.style.transform = "translate(" + tx.toFixed(1) + "px," + ty.toFixed(1) + "px) scale(" + sc.toFixed(4) + ")";
@@ -121,19 +125,23 @@
       groups.forEach(function (g) { g.setAttribute("transform", v); });
     }
 
+    function inout(x) { x = clamp(x); return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
+
     function tick(now) {
       if (!running) return;
       if (!t0) t0 = now;
-      var period = 1600;
-      var t = (now - t0) / period;
+      var t = (now - t0) / 2400;
       var phase = Math.sin(t * Math.PI * 2);
-      rotate(m.rot.balance, data.balance, phase * 150);
-      rotate(m.rot.fork, data.fork, Math.tanh(phase * 3) * 7);
-      var beats = Math.floor(t * 2 + 0.25);
-      var within = (t * 2 + 0.25) - beats;
-      var w = clamp(within / 0.35);
-      var stepEase = w < 0.5 ? 4 * w * w * w : 1 - Math.pow(-2 * w + 2, 3) / 2;
-      rotate(m.rot.escape, data.escape, -(beats - 1 + stepEase) * 12);
+      rotate(m.rot.balance, data.balance, phase * 42);
+      var k = (1 + phase * 0.035).toFixed(4);
+      var c = data.balance;
+      m.rot.spring.forEach(function (g) { g.setAttribute("transform", "translate(" + c[0] + " " + c[1] + ") scale(" + k + ") translate(" + (-c[0]) + " " + (-c[1]) + ")"); });
+      var beatPos = t * 2;
+      var beats = Math.floor(beatPos);
+      var flick = inout((beatPos - beats) / 0.1);
+      var side = beats % 2 ? 1 : -1;
+      rotate(m.rot.fork, data.fork, (-side + 2 * side * flick) * 6);
+      rotate(m.rot.escape, data.escape, -(beats + flick) * 6);
       requestAnimationFrame(tick);
     }
 
