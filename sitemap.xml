@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://disrupthings.com/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/"/></url>
+  <url><loc>https://disrupthings.com/en/</loc><lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/"/></url>
+  <url><loc>https://disrupthings.com/privacidad.html</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://disrupthings.com/terminos.html</loc><lastmod>2026-10-13</lastmod></url>
+</urlset>
