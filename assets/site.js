@@ -5,50 +5,82 @@
   var verts = [];
   for (var i = 0; i < 16; i++) verts.push([(i & 1) ? 1 : -1, (i & 2) ? 1 : -1, (i & 4) ? 1 : -1, (i & 8) ? 1 : -1]);
   var edges = [];
-  for (var a = 0; a < 16; a++) for (var b = a + 1; b < 16; b++) { var d = a ^ b; if (d && !(d & (d - 1))) edges.push([a, b]); }
+  for (var a = 0; a < 16; a++) for (var b = a + 1; b < 16; b++) { var d = a ^ b; if (d && !(d & (d - 1))) edges.push([a, b, Math.round(Math.log(d) / Math.LN2)]); }
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var track = document.getElementById("track");
+  var panels = track ? track.querySelectorAll(".panel").length : 0;
+  var dpr = 1, level = reduce ? 4 : 0, tx = 0, ty = 0, sx = 0, sy = 0;
+  var t0 = performance.now();
   function color(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || "#141A18"; }
   function size() {
-    var dpr = window.devicePixelRatio || 1;
+    dpr = window.devicePixelRatio || 1;
     cv.width = Math.max(1, Math.round(window.innerWidth * dpr));
     cv.height = Math.max(1, Math.round(window.innerHeight * dpr));
-    return dpr;
   }
-  var dpr = size();
-  var last = 0.6;
-  window.addEventListener("resize", function () { dpr = size(); draw(last); });
+  size();
+  window.addEventListener("resize", size);
+  window.addEventListener("pointermove", function (e) {
+    tx = Math.max(-1, Math.min(1, (e.clientX / window.innerWidth) * 2 - 1));
+    ty = Math.max(-1, Math.min(1, (e.clientY / window.innerHeight) * 2 - 1));
+  }, { passive: true });
+  document.documentElement.addEventListener("mouseleave", function () { tx = 0; ty = 0; });
+  function ease(x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); }
+  function progress() {
+    if (!panels) return 4;
+    var p;
+    if (getComputedStyle(track).display === "flex") p = track.scrollLeft / Math.max(1, track.clientWidth);
+    else {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      p = max > 0 ? (window.scrollY / max) * (panels - 1) : 0;
+    }
+    return Math.min(4, p * 4 / Math.max(1, panels - 2));
+  }
+  function target(now) {
+    var waited = (now - t0) / 1000;
+    var idle = Math.min(2, Math.max(0, (waited - 1.5) / 2.5) * 2);
+    return Math.max(progress(), idle);
+  }
   function rot(p, i, j, t) { var c = Math.cos(t), s = Math.sin(t); var x = p[i], y = p[j]; p[i] = x * c - y * s; p[j] = x * s + y * c; }
   function draw(t) {
-    last = t;
     var w = cv.width, h = cv.height;
     ctx.clearRect(0, 0, w, h);
+    var f = [ease(level), ease(level - 1), ease(level - 2), ease(level - 3)];
+    var tilt = ease(level - 3);
     var pts = verts.map(function (v) {
-      var p = v.slice();
-      rot(p, 0, 3, t * 0.6);
-      rot(p, 1, 2, t * 0.35);
-      rot(p, 0, 2, t * 0.2);
-      var k4 = 2.6 / (2.6 - p[3]);
-      var x = p[0] * k4, y = p[1] * k4, z = p[2] * k4;
+      var q = [v[0] * f[0], v[1] * f[1], v[2] * f[2], v[3] * f[3]];
+      rot(q, 0, 3, t * 0.6 + sx * 0.8 * tilt);
+      rot(q, 1, 3, sy * 0.8 * tilt);
+      rot(q, 1, 2, t * 0.35);
+      rot(q, 0, 2, t * 0.2);
+      var k4 = 2.6 / (2.6 - q[3]);
+      var x = q[0] * k4, y = q[1] * k4, z = q[2] * k4;
       var k3 = 4.5 / (4.5 - z);
       var m = Math.min(w, h) * 0.17;
-      return [w * 0.62 + x * k3 * m, h / 2 + y * k3 * m, p[3]];
+      return [w * 0.62 + x * k3 * m, h / 2 + y * k3 * m, q[3]];
     });
     var ink = color("--ink");
     ctx.lineWidth = 1.4 * dpr;
+    ctx.strokeStyle = ink;
     edges.forEach(function (e) {
+      var k = e[2];
+      if (f[k] <= 0.001) return;
+      for (var j = 0; j < 4; j++) if (j !== k && f[j] <= 0.001 && (e[0] >> j) & 1) return;
       var A = pts[e[0]], B = pts[e[1]];
-      ctx.strokeStyle = ink;
-      ctx.globalAlpha = 0.25 + 0.55 * ((A[2] + B[2] + 2) / 4);
+      ctx.globalAlpha = (0.25 + 0.55 * ((A[2] + B[2] + 2) / 4)) * Math.min(1, f[k] * 3);
       ctx.beginPath(); ctx.moveTo(A[0], A[1]); ctx.lineTo(B[0], B[1]); ctx.stroke();
     });
     ctx.globalAlpha = 1;
     ctx.fillStyle = color("--dot");
     var c = pts[15];
-    ctx.beginPath(); ctx.arc(c[0], c[1], 3.2 * dpr, 0, Math.PI * 2); ctx.fill();
+    ctx.beginPath(); ctx.arc(c[0], c[1], (3.2 + 1.8 * (1 - Math.min(1, level))) * dpr, 0, Math.PI * 2); ctx.fill();
   }
-  if (reduce) { draw(0.6); return; }
-  var t0 = performance.now();
-  (function loop(now) { draw(0.6 + ((now - t0) / 60000) * Math.PI * 2); requestAnimationFrame(loop); })(t0);
+  (function loop(now) {
+    var goal = target(now);
+    level += (goal - level) * (reduce ? 1 : 0.04);
+    sx += (tx - sx) * 0.05; sy += (ty - sy) * 0.05;
+    draw(reduce ? 0.6 : 0.6 + ((now - t0) / 60000) * Math.PI * 2);
+    requestAnimationFrame(loop);
+  })(t0);
 })();
 
 (function () {
