@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="home">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Disrupthings | AI product lab</title>
-<meta name="description" content="AI product lab in Mexico City. Vertical AI products in Spanish for work that is still done by hand in Latin America: Advocacia, Matteria and Expertia, built on the PAO platform.">
+<title>Disrupthings | AI lab</title>
+<meta name="description" content="Latin American AI lab with a global outlook. AI agent products and automations, running in 3 weeks at most, with your data under your control.">
 <link rel="canonical" href="https://disrupthings.com/en/">
 <link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/">
 <link rel="alternate" hreflang="en" href="https://disrupthings.com/en/">
@@ -12,189 +12,144 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Disrupthings">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="Disrupthings | AI product lab">
-<meta property="og:description" content="AI products for the work Latin America still does by hand.">
+<meta property="og:title" content="Disrupthings | AI lab">
+<meta property="og:description" content="AI products that work for you, and stay with you.">
 <meta property="og:url" content="https://disrupthings.com/en/">
 <meta property="og:image" content="https://disrupthings.com/assets/og-en.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@disrupthings">
-<meta name="theme-color" content="#0E1420">
+<meta name="theme-color" content="#F7F8F7">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="../assets/site.css?v=2026101409">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="../assets/site.css?v=2026101901">
 </head>
 <body>
-<div class="mechanism" id="mechanism" data-assemble-at="#contact" data-dock-at="#book" data-outline="../assets/models/escape-outline.json" aria-hidden="true"></div>
-<div class="wrap">
+<canvas id="tesseract" class="bg-tess" aria-hidden="true"></canvas>
+<div class="app">
   <header class="top">
     <a class="mark" href="./">Disrupthings<span>.</span></a>
-    <div class="top-right">
-      <nav class="nav" aria-label="Main">
-        <a class="keep" href="#products">Products</a>
-        <a href="#pao">PAO</a>
-        <a href="#experiments">Experiments</a>
-        <a href="#implementation">Implementation</a>
-        <a class="keep" href="#contact">Contact</a>
-      </nav>
+    <nav aria-label="Main">
+      <a href="#contact">Contact</a>
       <a class="lang" href="../" hreflang="es-MX" lang="es">Español</a>
-    </div>
+    </nav>
   </header>
+  <main class="track" id="track" tabindex="0" aria-label="Content, scrolls from left to right">
+    <section data-name="Home" class="panel hero"><div class="pin">
+      <h1>AI products that work for you, and stay with you.</h1>
+      <p>A Latin American lab with a global outlook. We build fast, measure everything, and everything leaves the trace it needs.</p>
+      <p class="label where">Europe · Asia · Latin America · USA</p>
+    </div></section>
 
-  <main>
-    <section class="hero">
-      <div>
-        <h1>AI products for the work Latin America still does by hand.</h1>
-        <p class="lede">We are a product lab in Mexico City. We build vertical AI products in Spanish on one shared agent platform, and we measure each one in production.</p>
-        <div class="actions">
-          <a class="btn solid" href="#products">See products</a>
-          <a class="btn ghost" href="#contact">Talk to us</a>
-        </div>
-      </div>
-
-      <div class="chat" role="img" aria-label="Sample Advocacia conversation on WhatsApp, in Spanish: a dismissed worker gets guidance, an estimated severance figure and an appointment with the law firm.">
-        <div class="chat-head">
-          <div class="avatar" aria-hidden="true">AD</div>
-          <div><strong>Despacho Ruiz &amp; Asociados</strong><small>Answered by Advocacia</small></div>
-        </div>
-        <span class="day">Viernes</span>
-        <div class="msg in" lang="es">Me despidieron sin previo aviso. ¿Qué me corresponde?<time>6:48 p. m.</time></div>
-        <div class="msg out" lang="es">Lamento lo que pasó. Para orientarte necesito tres datos: fecha de ingreso, salario diario y si te dieron algo por escrito.<time>6:48 p. m.</time></div>
-        <div class="msg in" lang="es">Entré en marzo de 2023, gano 450 al día y no me dieron nada.<time>6:51 p. m.</time></div>
-        <div class="msg out" lang="es">Si el despido fue injustificado, la ley contempla una indemnización de tres meses de salario más tus prestaciones pendientes.
-          <dl class="calc">
-            <dt>Indemnización, 90 días</dt><dd>$40,500</dd>
-            <dt>Prestaciones pendientes</dt><dd>Por revisar</dd>
-          </dl>
-          Te agendé mañana a las 10:00 con el despacho. Lleva una identificación y tus recibos.<time>6:51 p. m.</time></div>
-        <span class="chat-note">Sample conversation in Spanish. Figures in MXN, for guidance only.</span>
-      </div>
-    </section>
-
-    <section class="block" id="products">
-      <div class="block-head">
-        <h2>Products</h2>
-        <p>Vertical products for Mexico, built in Spanish and connected to the channels your customers already use. All of them run on PAO.</p>
-      </div>
-      <div class="products">
-        <article class="product">
-          <div><h3>Advocacia</h3><span class="stage live">Live</span></div>
-          <p>Law firms answer, qualify and book clients 24/7 on WhatsApp, Instagram, web and email. Every case reaches the lawyer summarized before the meeting.</p>
-          <a class="link" href="https://pilotolegal.disrupthings.com" target="_blank" rel="noopener">Explore Advocacia</a>
-        </article>
-        <article class="product">
-          <div><h3>Matteria</h3><span class="stage">School pilot</span></div>
-          <p>One teacher action becomes a personalized update for every family. Lesson planning, exams the teacher reviews, and messages to families.</p>
-          <a class="link" href="#contact">Join the pilot</a>
-        </article>
-        <article class="product">
-          <div><h3>Expertia</h3><span class="stage">Coming soon</span></div>
-          <p>Prepare for an official Mexican degree based on what you already know from work experience. Diagnostic, topic question bank and full mock exam.</p>
-          <a class="link" href="#contact">Notify me</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="block" id="pao">
-      <div class="block-head">
-        <h2>PAO</h2>
-        <p>The platform where our agents live. Our products run here, and your company can run its own agents on it too.</p>
-      </div>
-      <div class="engine">
+    <section data-name="What works" class="panel block" id="products"><div class="pin">
+      <div class="head"><h2>What already works</h2></div>
+      <div class="cols c2">
         <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
-          <h3>Orchestrate and connect</h3>
-          <p>Routes each task across several models and connects to any platform you use: WhatsApp, CRM, ERP, email or your own system.</p>
+          <span class="label live">Open pilot</span>
+          <h3>Agents for schools</h3>
+          <p>One action from the teacher becomes personal follow-up for every family, on the channels they already use.</p>
+          <a href="#contact">Request the pilot</a>
         </div>
         <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
-          <h3>Govern</h3>
-          <p>You decide what each agent can do and what needs a person's approval, with a record of every action.</p>
-        </div>
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16"/><path d="M7 15v-4M12 15V7M17 15v-6"/></svg>
-          <h3>Fidelia</h3>
-          <p>Measures every agent before release and in production: quality, cost per resolution and alerts.</p>
+          <span class="label">Available</span>
+          <h3>Legal assistant for law firms</h3>
+          <p>Answers, qualifies and books around the clock. The lawyer gets every case summarized before the meeting.</p>
+          <a href="https://pilotolegal.disrupthings.com" target="_blank" rel="noopener">See the site</a>
         </div>
       </div>
-    </section>
+    </div></section>
 
-    <section class="block" id="experiments">
-      <div class="block-head">
-        <h2>Experiments</h2>
-        <p>We test ideas before they become products. Most never make it; we publish them anyway because the ones that do come from here.</p>
+    <section data-name="How we work" class="panel block" id="how"><div class="pin">
+      <div class="head"><h2>How we work</h2><p class="sub">Every project leaves molds that make the next one faster, more accurate and cheaper.</p></div>
+      <div class="cols c3">
+        <div><span class="label">01</span><h3>A prototype in days</h3><p>You see something working with your real data before committing more.</p></div>
+        <div><span class="label">02</span><h3>We measure before moving on</h3><p>Quality, cost and risk at every step. If it doesn't work, you know early.</p></div>
+        <div><span class="label">03</span><h3>Cheaper every time</h3><p>What already worked is reused; you only pay in full for what is new.</p></div>
       </div>
-      <div class="exps">
-        <article class="exp">
-          <span class="id">Experiment 001</span>
-          <h3>Compania</h3>
-          <p>A daily call for older adults who live alone, with an alert to their family if something seems wrong.</p>
-        </article>
-        <article class="exp">
-          <span class="id">Experiment 002</span>
-          <h3>Indemnia</h3>
-          <p>Claims the compensation airlines owe you when your flight is delayed or cancelled.</p>
-        </article>
-      </div>
-    </section>
+    </div></section>
 
-    <section class="block" id="implementation">
-      <div class="block-head">
-        <h2>Implementation</h2>
-        <p>We build AI agent automations on PAO for your company, from repetitive work to work that takes judgment. Each one is running in 3 weeks at most, with a fixed date and a fixed price in writing.</p>
-      </div>
-      <div class="engine four">
-        <div><h3>Certainty</h3><p>Fixed date and fixed price in writing, from the proposal.</p></div>
-        <div><h3>Speed</h3><p>Running in 3 weeks at most, not months.</p></div>
-        <div><h3>Value</h3><p>50% to start and 50% once it is working.</p></div>
-        <div><h3>Control</h3><p>Your team approves what matters and your data stays yours.</p></div>
-      </div>
-      <div class="table-scroll" style="margin-top: 48px">
-        <table class="services areas">
-          <caption class="sr-only">Areas and automations we build</caption>
-          <tbody>
-            <tr><td>Sales</td><td>Lead qualification · Follow-up · Quotes · Scheduling and reminders</td></tr>
-            <tr><td>Customer service</td><td>WhatsApp and email · Review replies</td></tr>
-            <tr><td>Finance</td><td>Collections · Document capture · Basic reconciliation</td></tr>
-            <tr><td>Operations</td><td>Reports · System integration · Onboarding and records · Meeting summaries · Internal knowledge · Inventory and purchasing</td></tr>
-            <tr><td>Team and marketing</td><td>Recruiting · Social content</td></tr>
-            <tr><td>Judgment work</td><td>Contract review · Prospect research · Tender responses · Complaint analysis</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="guarantee"><strong>Date guarantee:</strong> if we miss the date in the proposal, your first month of maintenance is on us. The exact price comes out of a 30-minute assessment.</p>
-      <p class="also">We also offer product and AI leadership as a Fractional CPO, and one-day workshops so your team knows what to automate.</p>
-    </section>
-
-    <section class="block" id="contact">
-      <div class="contact">
-        <div>
-          <h2>Tell us what your team still does by hand.</h2>
-          <div class="email">
-            <code id="mail">info@disrupthings.com</code>
-            <button class="copy" id="copy" type="button" data-idle="Copy email" data-copied="Copied" data-manual="Select and copy">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
-              <span id="copy-label" aria-live="polite">Copy email</span>
-            </button>
+    <section data-name="Your data" class="panel block" id="data"><div class="pin">
+      <div class="head"><h2>Your data stays with you</h2><p class="sub">Every question goes to the smallest model that answers it well. First on your own equipment; to the cloud only when needed. Try it:</p></div>
+      <div class="sim">
+        <div class="controls">
+          <div class="ctl">
+            <span class="label" id="lblTarea">Task</span>
+            <div class="seg" role="radiogroup" aria-labelledby="lblTarea" id="tarea">
+              <button type="button" role="radio" aria-checked="true" data-v="rapida">Quick</button>
+              <button type="button" role="radio" aria-checked="false" data-v="razonar">Reason</button>
+              <button type="button" role="radio" aria-checked="false" data-v="redactar">Write</button>
+              <button type="button" role="radio" aria-checked="false" data-v="estructurar">Structure</button>
+              <button type="button" role="radio" aria-checked="false" data-v="programar">Code</button>
+            </div>
+          </div>
+          <div class="ctl toggles">
+            <label class="tg"><input type="checkbox" id="privado"><span>Includes private data</span></label>
+            <label class="tg"><input type="checkbox" id="red" checked><span>Internet available</span></label>
           </div>
         </div>
-        <a class="btn solid" id="book" href="https://calendly.com/disrupthings/piloto-legal" target="_blank" rel="noopener">Book a call</a>
+        <ol class="route" id="route">
+          <li data-s="revision"><span class="dotr" aria-hidden="true"></span><div><h3>Check on your equipment</h3><p>Sees how hard it is and whether it includes private data.</p></div></li>
+          <li data-s="rapido"><span class="dotr" aria-hidden="true"></span><div><h3>Quick answer</h3><p>Simple things are solved in seconds, on your equipment.</p></div></li>
+          <li data-s="razonar"><span class="dotr" aria-hidden="true"></span><div><h3>In-depth analysis</h3><p>Thinks harder, without anything leaving your equipment.</p></div></li>
+          <li data-s="espera"><span class="dotr" aria-hidden="true"></span><div><h3>Waiting</h3><p>Without internet, it resolves itself once the connection is back.</p></div></li>
+          <li data-s="nube"><span class="dotr" aria-hidden="true"></span><div><h3>Specialized support</h3><p id="nubeTxt">Only when the task needs it.</p></div></li>
+        </ol>
+        <p class="result" id="result" aria-live="polite"></p>
       </div>
-    </section>
-  </main>
+      <p class="fine">Every agent is measured before it ships and while it works, and everything it does is logged.</p>
+    </div></section>
 
-  <footer>
-    <span>© 2026 Disrupthings. Mexico City.</span>
-    <nav aria-label="Legal">
-      <a href="../terminos.html" hreflang="es">Terms (Spanish)</a>
-      <a href="../privacidad.html" hreflang="es">Privacy notice (Spanish)</a>
-    </nav>
-    <p class="credit">3D model: <a href="https://sketchfab.com/3d-models/swiss-lever-escapement-mechanism-96cf82a6bdcd4ddda7635fbd33d0e016" target="_blank" rel="noopener">Swiss lever escapement mechanism</a> by C. Yamahata, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.</p>
-  </footer>
+    <section data-name="Your idea" class="panel block" id="yours"><div class="pin">
+      <div class="head"><h2>Your idea gets cheaper every time</h2><p class="sub">Every quote tells you how much of your project comes from pieces that already exist. You choose what happens with what we build.</p></div>
+      <div class="cols c2">
+        <div><span class="label">General</span><h3>Discounted</h3><p>The mold, without any of your data, helps other projects. What you contribute earns you credit for the next one.</p></div>
+        <div><span class="label">Exclusive</span><h3>Full price</h3><p>What we build is only for you. It can also be exclusive for a time in your industry or your city.</p></div>
+      </div>
+      <p class="fine">Either way, your data, your clients and your setup are always yours.</p>
+    </div></section>
+
+    <section data-name="Services" class="panel block" id="services"><div class="pin">
+      <div class="head"><h2>Services for your company</h2><p class="sub">AI agents that take on your team's work, from the most repetitive to the work that takes judgment. Each one is running in 3 weeks at most, with a fixed date and a fixed price in writing.</p></div>
+      <div class="cols c2">
+        <div><h3>Your team stops typing things in by hand</h3><p>We automate the tasks repeated every day, and the data-entry errors go with them.</p></div>
+        <div><h3>Your systems share information on their own</h3><p>We connect your tools so nobody has to copy data from one to another.</p></div>
+        <div><h3>Your clients get answers at any hour</h3><p>AI agents that answer and resolve, and hand over to a person what needs judgment.</p></div>
+        <div><h3>Your numbers ready without building spreadsheets</h3><p>Reports, collections and reconciliations that run themselves and add up.</p></div>
+        <div><h3>Work that takes judgment arrives ready to decide</h3><p>Contracts, tenders and complaints read and summarized; a person on your team approves before anything goes out.</p></div>
+        <div><h3>Your leads don't go cold</h3><p>Every lead is qualified, followed up, and booked with a reminder.</p></div>
+        <div><h3>Product leadership without a full-time hire</h3><p>Someone experienced leads your product and AI strategy for as many months as you need.</p></div>
+        <div><h3>Your team knows what to automate first</h3><p>A one-day workshop to choose what to automate and how to measure whether it worked.</p></div>
+      </div>
+      <p class="promise"><strong>A fixed date in writing.</strong> If we miss the date in the proposal, your first month of maintenance is on us. The exact price comes out of a 30-minute assessment.</p>
+    </div></section>
+
+    <section data-name="Contact" class="panel block contact" id="contact"><div class="pin">
+      <h2>Tell us what is still done by hand in your operation.</h2>
+      <div class="contact-row">
+        <code id="mail">info@disrupthings.com</code>
+        <button class="copy" id="copy" type="button" data-idle="Copy" data-copied="Copied" data-manual="Select and copy"><span id="copy-label">Copy</span></button>
+        <a class="btn" href="https://calendly.com/disrupthings/piloto-legal" target="_blank" rel="noopener">Book a call</a>
+      </div>
+      <footer>
+        <span>© 2026 Disrupthings · Mexico City</span>
+        <nav aria-label="Legal">
+          <a href="../terminos.html" hreflang="es-MX">Terms (in Spanish)</a>
+          <a href="../privacidad.html" hreflang="es-MX">Privacy notice (in Spanish)</a>
+        </nav>
+      </footer>
+    </div></section>
+  </main>
+  <nav class="pager" id="pager" aria-label="Sections">
+    <span class="label" id="pagerLbl">01 · Home</span>
+    <div class="pdots" id="pdots"></div>
+    <div class="parrows">
+      <button class="parrow" id="pPrev" type="button" aria-label="Previous section"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <button class="parrow" id="pNext" type="button" aria-label="Next section"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </nav>
 </div>
-<script src="../assets/site.js?v=2026101409" defer></script>
-<script src="../assets/mechanism.js?v=2026101409" defer></script>
+<script src="../assets/site.js?v=2026101901"></script>
 </body>
 </html>
