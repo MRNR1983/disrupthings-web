@@ -181,3 +181,13 @@ footer a { text-decoration: none; }
 .mechanism .jewel { fill: var(--accent); fill-opacity: 0; transition: fill-opacity 600ms ease; } .mechanism.done .jewel { fill-opacity: 0.8; }
 @media (max-width: 860px) { .mechanism svg { width: 96vw; } .mechanism .layer path { opacity: 0.14; } .mechanism.done .layer path { opacity: 1; } }
 .credit { font-size: 0.75rem; }
+
+.engine.four { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.engine.four div { border-top: 2px solid var(--accent); padding-top: 16px; }
+.services.areas td:last-child { text-align: left; white-space: normal; color: var(--ink-soft); font-variant-numeric: normal; }
+.services.areas td:first-child { width: 28%; }
+.guarantee { margin-top: 32px; padding: 18px 22px; border-radius: 14px; background: var(--accent-tint); color: var(--ink); max-width: 72ch; }
+.guarantee strong { color: var(--accent); }
+.also { margin-top: 20px; color: var(--ink-soft); font-size: 0.95rem; max-width: 72ch; }
+@media (max-width: 860px) { .engine.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .engine.four { grid-template-columns: minmax(0, 1fr); } .services.areas td:last-child { font-weight: 400; } .services.areas td:first-child { width: 100%; } }
