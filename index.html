@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="es-MX">
+<html lang="es-MX" class="home">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Disrupthings | Laboratorio de productos de IA</title>
-<meta name="description" content="Laboratorio de IA en la Ciudad de México. Productos verticales en español para lo que en Latinoamérica todavía se hace a mano: Advocacia, Matteria y Expertia, sobre la plataforma PAO.">
+<title>Disrupthings | Laboratorio de IA</title>
+<meta name="description" content="Laboratorio latinoamericano de IA con visión global. Productos y automatizaciones con agentes de IA, funcionando en máximo 3 semanas, con tus datos bajo tu control.">
 <link rel="canonical" href="https://disrupthings.com/">
 <link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/">
 <link rel="alternate" hreflang="en" href="https://disrupthings.com/en/">
@@ -12,189 +12,144 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Disrupthings">
 <meta property="og:locale" content="es_MX">
-<meta property="og:title" content="Disrupthings | Laboratorio de productos de IA">
-<meta property="og:description" content="Productos de IA para lo que en Latinoamérica todavía se hace a mano.">
+<meta property="og:title" content="Disrupthings | Laboratorio de IA">
+<meta property="og:description" content="Productos de IA que trabajan para ti, y se quedan contigo.">
 <meta property="og:url" content="https://disrupthings.com/">
 <meta property="og:image" content="https://disrupthings.com/assets/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@disrupthings">
-<meta name="theme-color" content="#0E1420">
+<meta name="theme-color" content="#F7F8F7">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=2026101409">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="assets/site.css?v=2026101901">
 </head>
 <body>
-<div class="mechanism" id="mechanism" data-assemble-at="#contacto" data-dock-at="#book" data-outline="./assets/models/escape-outline.json" aria-hidden="true"></div>
-<div class="wrap">
+<canvas id="tesseract" class="bg-tess" aria-hidden="true"></canvas>
+<div class="app">
   <header class="top">
     <a class="mark" href="./">Disrupthings<span>.</span></a>
-    <div class="top-right">
-      <nav class="nav" aria-label="Principal">
-        <a class="keep" href="#productos">Productos</a>
-        <a href="#pao">PAO</a>
-        <a href="#experimentos">Experimentos</a>
-        <a href="#implementacion">Implementación</a>
-        <a class="keep" href="#contacto">Contacto</a>
-      </nav>
+    <nav aria-label="Principal">
+      <a href="#contacto">Contacto</a>
       <a class="lang" href="en/" hreflang="en" lang="en">English</a>
-    </div>
+    </nav>
   </header>
+  <main class="track" id="track" tabindex="0" aria-label="Contenido, se recorre de izquierda a derecha">
+    <section data-name="Portada" class="panel hero"><div class="pin">
+      <h1>Productos de IA que trabajan para ti, y se quedan contigo.</h1>
+      <p>Laboratorio latinoamericano con visión global. Construimos rápido, medimos todo y todo deja rastro de lo necesario.</p>
+      <p class="label where">Europa · Asia · América Latina · USA</p>
+    </div></section>
 
-  <main>
-    <section class="hero">
-      <div>
-        <h1>Productos de IA para lo que en Latinoamérica todavía se hace a mano.</h1>
-        <p class="lede">Somos un laboratorio en la Ciudad de México. Construimos productos verticales en español sobre una misma plataforma de agentes, y medimos cada uno en producción.</p>
-        <div class="actions">
-          <a class="btn solid" href="#productos">Ver productos</a>
-          <a class="btn ghost" href="#contacto">Hablar con nosotros</a>
-        </div>
-      </div>
-
-      <div class="chat" role="img" aria-label="Conversación de ejemplo de Advocacia por WhatsApp: una persona despedida recibe orientación, un cálculo orientativo y una cita con el despacho.">
-        <div class="chat-head">
-          <div class="avatar" aria-hidden="true">AD</div>
-          <div><strong>Despacho Ruiz &amp; Asociados</strong><small>Atiende Advocacia</small></div>
-        </div>
-        <span class="day">Viernes</span>
-        <div class="msg in">Me despidieron sin previo aviso. ¿Qué me corresponde?<time>6:48 p. m.</time></div>
-        <div class="msg out">Lamento lo que pasó. Para orientarte necesito tres datos: fecha de ingreso, salario diario y si te dieron algo por escrito.<time>6:48 p. m.</time></div>
-        <div class="msg in">Entré en marzo de 2023, gano 450 al día y no me dieron nada.<time>6:51 p. m.</time></div>
-        <div class="msg out">Si el despido fue injustificado, la ley contempla una indemnización de tres meses de salario más tus prestaciones pendientes.
-          <dl class="calc">
-            <dt>Indemnización, 90 días</dt><dd>$40,500</dd>
-            <dt>Prestaciones pendientes</dt><dd>Por revisar</dd>
-          </dl>
-          Te agendé mañana a las 10:00 con el despacho. Lleva una identificación y tus recibos.<time>6:51 p. m.</time></div>
-        <span class="chat-note">Conversación de ejemplo. El cálculo es orientativo.</span>
-      </div>
-    </section>
-
-    <section class="block" id="productos">
-      <div class="block-head">
-        <h2>Productos</h2>
-        <p>Productos verticales para México, hechos en español y conectados a los canales que tus clientes ya usan. Todos corren sobre PAO.</p>
-      </div>
-      <div class="products">
-        <article class="product">
-          <div><h3>Advocacia</h3><span class="stage live">En vivo</span></div>
-          <p>Tu despacho atiende, califica y agenda las 24 horas en WhatsApp, Instagram, web y correo. Cada caso te llega resumido antes de la cita.</p>
-          <a class="link" href="https://pilotolegal.disrupthings.com" target="_blank" rel="noopener">Conocer Advocacia</a>
-        </article>
-        <article class="product">
-          <div><h3>Matteria</h3><span class="stage">Piloto escolar</span></div>
-          <p>Una acción del maestro se vuelve seguimiento personalizado para cada familia. Planeación, exámenes revisados por el maestro y avisos a las familias.</p>
-          <a class="link" href="#contacto">Quiero el piloto</a>
-        </article>
-        <article class="product">
-          <div><h3>Expertia</h3><span class="stage">Próximamente</span></div>
-          <p>Prepárate para obtener tu título oficial SEP con lo que ya sabes por tu experiencia. Diagnóstico, banco de preguntas por tema y simulacro completo.</p>
-          <a class="link" href="#contacto">Avisarme</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="block" id="pao">
-      <div class="block-head">
-        <h2>PAO</h2>
-        <p>La plataforma donde viven nuestros agentes. Nuestros productos corren aquí, y tu empresa puede usarla para los suyos.</p>
-      </div>
-      <div class="engine">
+    <section data-name="Lo que funciona" class="panel block" id="productos"><div class="pin">
+      <div class="head"><h2>Lo que ya funciona</h2></div>
+      <div class="cols c2">
         <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
-          <h3>Orquestar y conectar</h3>
-          <p>Reparte cada tarea entre varios modelos y se conecta a cualquier plataforma que uses: WhatsApp, CRM, ERP, correo o tu propio sistema.</p>
+          <span class="label live">Piloto abierto</span>
+          <h3>Agentes para escuelas</h3>
+          <p>Una acción del maestro se vuelve seguimiento personalizado para cada familia, por los canales que ya usan.</p>
+          <a href="#contacto">Pedir el piloto</a>
         </div>
         <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
-          <h3>Gobernar</h3>
-          <p>Tú decides qué puede hacer cada agente, qué necesita aprobación de una persona y queda registro de todo.</p>
-        </div>
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19h16"/><path d="M7 15v-4M12 15V7M17 15v-6"/></svg>
-          <h3>Fidelia</h3>
-          <p>Mide cada agente antes de salir y en producción: calidad, costo por resolución y alertas.</p>
+          <span class="label">Disponible</span>
+          <h3>Asistente legal para despachos</h3>
+          <p>Atiende, califica y agenda las 24 horas. El abogado recibe cada caso resumido antes de la cita.</p>
+          <a href="https://pilotolegal.disrupthings.com" target="_blank" rel="noopener">Ver el sitio</a>
         </div>
       </div>
-    </section>
+    </div></section>
 
-    <section class="block" id="experimentos">
-      <div class="block-head">
-        <h2>Experimentos</h2>
-        <p>Probamos ideas antes de volverlas producto. La mayoría no llega; las publicamos igual porque de ahí sale lo que sí.</p>
+    <section data-name="Cómo trabajamos" class="panel block" id="como"><div class="pin">
+      <div class="head"><h2>Cómo trabajamos</h2><p class="sub">Cada proyecto deja moldes que hacen el siguiente más rápido, más exacto y más barato.</p></div>
+      <div class="cols c3">
+        <div><span class="label">01</span><h3>Prototipo en días</h3><p>Ves algo funcionando con tus datos reales antes de comprometer más.</p></div>
+        <div><span class="label">02</span><h3>Medimos antes de seguir</h3><p>Calidad, costo y riesgo, en cada paso. Si no sirve, lo sabes pronto.</p></div>
+        <div><span class="label">03</span><h3>Cada vez más barato</h3><p>Lo que ya funcionó se reutiliza; solo pagas completo lo nuevo.</p></div>
       </div>
-      <div class="exps">
-        <article class="exp">
-          <span class="id">Experimento 001</span>
-          <h3>Compania</h3>
-          <p>Una llamada diaria para personas mayores que viven solas, con aviso a su familia si algo no está bien.</p>
-        </article>
-        <article class="exp">
-          <span class="id">Experimento 002</span>
-          <h3>Indemnia</h3>
-          <p>Reclama por ti la compensación que te deben cuando tu vuelo se retrasa o se cancela.</p>
-        </article>
-      </div>
-    </section>
+    </div></section>
 
-    <section class="block" id="implementacion">
-      <div class="block-head">
-        <h2>Implementación</h2>
-        <p>Sobre PAO construimos automatizaciones con agentes de IA para tu empresa, del trabajo repetitivo al que requiere criterio. Cada una queda funcionando en máximo 3 semanas, con fecha fija y precio cerrado por escrito.</p>
-      </div>
-      <div class="engine four">
-        <div><h3>Certidumbre</h3><p>Fecha fija y precio cerrado por escrito, desde la propuesta.</p></div>
-        <div><h3>Inmediatez</h3><p>Funcionando en máximo 3 semanas, no en meses.</p></div>
-        <div><h3>Valor</h3><p>50% para empezar y 50% cuando ya está trabajando.</p></div>
-        <div><h3>Control</h3><p>Tu equipo aprueba lo importante y tus datos son tuyos.</p></div>
-      </div>
-      <div class="table-scroll" style="margin-top: 48px">
-        <table class="services areas">
-          <caption class="sr-only">Áreas y automatizaciones que construimos</caption>
-          <tbody>
-            <tr><td>Ventas</td><td>Calificación de prospectos · Seguimiento · Cotizaciones · Agenda y recordatorios</td></tr>
-            <tr><td>Atención</td><td>WhatsApp y correo · Respuesta a reseñas</td></tr>
-            <tr><td>Finanzas</td><td>Cobranza · Captura de documentos · Conciliación básica</td></tr>
-            <tr><td>Operación</td><td>Reportes · Conexión entre sistemas · Altas y expedientes · Resumen de reuniones · Conocimiento interno · Inventario y compras</td></tr>
-            <tr><td>Equipo y marketing</td><td>Reclutamiento · Contenido para redes</td></tr>
-            <tr><td>Trabajo con criterio</td><td>Revisión de contratos · Investigación de prospectos · Respuesta a licitaciones · Análisis de quejas</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="guarantee"><strong>Garantía de fecha:</strong> si nos pasamos de la fecha de la propuesta, tu primer mes de mantenimiento corre por nuestra cuenta. El precio exacto sale de un diagnóstico de 30 minutos.</p>
-      <p class="also">También damos dirección de producto e IA como Fractional CPO y workshops de un día para que tu equipo sepa qué automatizar.</p>
-    </section>
-
-    <section class="block" id="contacto">
-      <div class="contact">
-        <div>
-          <h2>Cuéntanos qué se sigue haciendo a mano en tu operación.</h2>
-          <div class="email">
-            <code id="mail">info@disrupthings.com</code>
-            <button class="copy" id="copy" type="button" data-idle="Copiar correo" data-copied="Copiado" data-manual="Selecciona y copia">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
-              <span id="copy-label" aria-live="polite">Copiar correo</span>
-            </button>
+    <section data-name="Tus datos" class="panel block" id="datos"><div class="pin">
+      <div class="head"><h2>Tus datos se quedan contigo</h2><p class="sub">Cada pregunta va al modelo más chico que la resuelve bien. Primero en tu equipo; a la nube solo si hace falta. Pruébalo:</p></div>
+      <div class="sim">
+        <div class="controls">
+          <div class="ctl">
+            <span class="label" id="lblTarea">Tarea</span>
+            <div class="seg" role="radiogroup" aria-labelledby="lblTarea" id="tarea">
+              <button type="button" role="radio" aria-checked="true" data-v="rapida">Rápida</button>
+              <button type="button" role="radio" aria-checked="false" data-v="razonar">Razonar</button>
+              <button type="button" role="radio" aria-checked="false" data-v="redactar">Redactar</button>
+              <button type="button" role="radio" aria-checked="false" data-v="estructurar">Estructurar</button>
+              <button type="button" role="radio" aria-checked="false" data-v="programar">Programar</button>
+            </div>
+          </div>
+          <div class="ctl toggles">
+            <label class="tg"><input type="checkbox" id="privado"><span>Lleva datos privados</span></label>
+            <label class="tg"><input type="checkbox" id="red" checked><span>Hay internet</span></label>
           </div>
         </div>
-        <a class="btn solid" id="book" href="https://calendly.com/disrupthings/piloto-legal" target="_blank" rel="noopener">Agendar una llamada</a>
+        <ol class="route" id="route">
+          <li data-s="revision"><span class="dotr" aria-hidden="true"></span><div><h3>Revisión en tu equipo</h3><p>Ve qué tan difícil es y si lleva datos privados.</p></div></li>
+          <li data-s="rapido"><span class="dotr" aria-hidden="true"></span><div><h3>Respuesta rápida</h3><p>Lo sencillo se resuelve en segundos, en tu equipo.</p></div></li>
+          <li data-s="razonar"><span class="dotr" aria-hidden="true"></span><div><h3>Análisis a fondo</h3><p>Piensa más, sin que nada salga de tu equipo.</p></div></li>
+          <li data-s="espera"><span class="dotr" aria-hidden="true"></span><div><h3>En espera</h3><p>Sin internet, se resuelve sola al volver la conexión.</p></div></li>
+          <li data-s="nube"><span class="dotr" aria-hidden="true"></span><div><h3>Apoyo especializado</h3><p id="nubeTxt">Solo cuando la tarea lo pide.</p></div></li>
+        </ol>
+        <p class="result" id="result" aria-live="polite"></p>
       </div>
-    </section>
-  </main>
+      <p class="fine">Cada agente se mide antes de salir y mientras trabaja, y queda registro de todo lo que hace.</p>
+    </div></section>
 
-  <footer>
-    <span>© 2026 Disrupthings. Ciudad de México.</span>
-    <nav aria-label="Legal">
-      <a href="terminos.html">Términos</a>
-      <a href="privacidad.html">Aviso de privacidad</a>
-    </nav>
-    <p class="credit">Modelo 3D: <a href="https://sketchfab.com/3d-models/swiss-lever-escapement-mechanism-96cf82a6bdcd4ddda7635fbd33d0e016" target="_blank" rel="noopener">Swiss lever escapement mechanism</a>, de C. Yamahata, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.</p>
-  </footer>
+    <section data-name="Tu idea" class="panel block" id="contigo"><div class="pin">
+      <div class="head"><h2>Tu idea sale más barata cada vez</h2><p class="sub">Cada cotización te dice cuánto de tu proyecto sale de piezas que ya existen. Tú eliges qué pasa con lo que construimos.</p></div>
+      <div class="cols c2">
+        <div><span class="label">General</span><h3>Con descuento</h3><p>El molde, sin ningún dato tuyo, ayuda a otros proyectos. Lo que aportas te da crédito para el siguiente.</p></div>
+        <div><span class="label">Exclusiva</span><h3>Precio completo</h3><p>Lo construido es solo para ti. También puede ser exclusivo por un tiempo en tu industria o tu ciudad.</p></div>
+      </div>
+      <p class="fine">En las dos, tus datos, tus clientes y tu configuración son siempre tuyos.</p>
+    </div></section>
+
+    <section data-name="Servicios" class="panel block" id="servicios"><div class="pin">
+      <div class="head"><h2>Servicios para tu empresa</h2><p class="sub">Agentes de IA que hacen trabajo de tu equipo, del más repetitivo al que requiere criterio. Cada uno queda funcionando en máximo 3 semanas, con fecha fija y precio cerrado por escrito.</p></div>
+      <div class="cols c2">
+        <div><h3>Tu equipo deja de capturar a mano</h3><p>Automatizamos las tareas que se repiten todos los días, y con ellas se van los errores de captura.</p></div>
+        <div><h3>Tus sistemas comparten la información solos</h3><p>Conectamos tus herramientas para que nadie tenga que copiar datos de una a otra.</p></div>
+        <div><h3>Tus clientes reciben respuesta a cualquier hora</h3><p>Agentes de IA que atienden y resuelven, y pasan a una persona lo que necesita criterio.</p></div>
+        <div><h3>Tus números listos sin armar hojas de cálculo</h3><p>Reportes, cobranza y conciliaciones que se hacen solos y cuadran.</p></div>
+        <div><h3>Lo que requiere criterio llega listo para decidir</h3><p>Contratos, licitaciones y quejas leídos y resumidos; una persona de tu equipo aprueba antes de que algo salga.</p></div>
+        <div><h3>Tus prospectos no se enfrían</h3><p>Cada prospecto se califica, recibe seguimiento y su cita queda agendada con recordatorio.</p></div>
+        <div><h3>Dirección de producto sin contratar de tiempo completo</h3><p>Alguien con experiencia lleva tu producto y tu estrategia de IA por los meses que lo necesites.</p></div>
+        <div><h3>Tu equipo sabe qué automatizar primero</h3><p>Un taller de un día para elegir qué conviene automatizar y cómo medir si funcionó.</p></div>
+      </div>
+      <p class="promise"><strong>Fecha fija por escrito.</strong> Si nos pasamos de la fecha de la propuesta, tu primer mes de mantenimiento corre por nuestra cuenta. El precio exacto sale de un diagnóstico de 30 minutos.</p>
+    </div></section>
+
+    <section data-name="Contacto" class="panel block contact" id="contacto"><div class="pin">
+      <h2>Cuéntanos qué se sigue haciendo a mano en tu operación.</h2>
+      <div class="contact-row">
+        <code id="mail">info@disrupthings.com</code>
+        <button class="copy" id="copy" type="button" data-idle="Copiar" data-copied="Copiado" data-manual="Selecciona y copia"><span id="copy-label">Copiar</span></button>
+        <a class="btn" href="https://calendly.com/disrupthings/piloto-legal" target="_blank" rel="noopener">Agendar una llamada</a>
+      </div>
+      <footer>
+        <span>© 2026 Disrupthings · Ciudad de México</span>
+        <nav aria-label="Legal">
+          <a href="terminos.html">Términos</a>
+          <a href="privacidad.html">Aviso de privacidad</a>
+        </nav>
+      </footer>
+    </div></section>
+  </main>
+  <nav class="pager" id="pager" aria-label="Secciones">
+    <span class="label" id="pagerLbl">01 · Portada</span>
+    <div class="pdots" id="pdots"></div>
+    <div class="parrows">
+      <button class="parrow" id="pPrev" type="button" aria-label="Sección anterior"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <button class="parrow" id="pNext" type="button" aria-label="Sección siguiente"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </nav>
 </div>
-<script src="assets/site.js?v=2026101409" defer></script>
-<script src="./assets/mechanism.js?v=2026101409" defer></script>
+<script src="assets/site.js?v=2026101901"></script>
 </body>
 </html>
