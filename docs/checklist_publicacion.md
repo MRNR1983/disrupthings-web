@@ -35,3 +35,18 @@ Revisado el 13 de octubre de 2026, 21:30 CDMX, con Chromium (Playwright) a 390 p
 | Evento de Calendly general de DS en lugar de "Piloto Legal" | 7 | Propuesta; requiere tu cuenta de Calendly |
 | Fuentes alojadas en el propio sitio, sin Google Fonts | 6 | Propuesta |
 | Versión en ruso, como el sitio anterior | 5 | Propuesta |
+
+
+# Revisión v2: páginas por proyecto
+
+Revisado el 20 de octubre de 2026, 20:30 CDMX, con Chromium (Playwright) a 390 px y 1280 px en servidor local: 17 páginas (inicio ES/EN, legales, 404 y 12 páginas de proyecto).
+
+| # | Punto | Estado | Qué se hizo o por qué |
+| --- | --- | --- | --- |
+| 6 | Título y metadescripción | Cumple | Las 12 páginas de proyecto las generan `tools/build.py` desde `content/proyectos.json` |
+| 7 | Vista previa del enlace | Cumple | Open Graph en inicio y proyectos; legales y 404 sin imagen social a propósito |
+| 9 | Sitemap | Cumple | `sitemap.xml` regenerado con las 12 páginas y alternates ES/EN |
+| 13 | Contraste | Cumple | Las páginas nuevas usan los mismos tokens (texto secundario 7.0:1 claro, 8.2:1 oscuro) |
+| 14 | Móvil | Cumple | Sin scroll horizontal a 390 px en las 17 páginas |
+| 16 | Enlaces rotos | Cumple | Internos OK. Calendly gratis permite un solo evento: todos los botones van a `diagnostico` con el proyecto prellenado (`?a1=`); verificado en vivo el 20 oct 2026, 20:30 |
+| 20 | CTA claro | Cumple | Un botón por página de proyecto (agendar demo); Acompañamiento sin botón, solo aviso |
