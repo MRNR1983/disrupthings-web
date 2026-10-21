@@ -1,0 +1,322 @@
+{
+  "booking_base": "https://calendly.com/disrupthings/",
+  "diagnostico": "diagnostico",
+  "ui": {
+    "es": {
+      "lang": "es-MX",
+      "dir": "proyectos",
+      "home": "./",
+      "back": "Volver al inicio",
+      "other_lang": "English",
+      "section": "Proyectos",
+      "section_sub": "Lo que ya funciona y lo que estamos probando. Cada uno se describe por lo que hace.",
+      "more": "Ver el proyecto",
+      "problem": "El problema",
+      "how": "Cómo funciona",
+      "does": "Qué hace",
+      "care": "Cómo lo cuidamos",
+      "demo": "Agendar una demo",
+      "demo_sub": "30 minutos. Te enseñamos cómo funciona con un caso parecido al tuyo.",
+      "others": "Otros proyectos",
+      "rights": "© 2026 Disrupthings · Ciudad de México",
+      "terms": "Términos",
+      "privacy": "Aviso de privacidad",
+      "terms_href": "terminos.html",
+      "privacy_href": "privacidad.html"
+    },
+    "en": {
+      "lang": "en",
+      "dir": "en/projects",
+      "home": "../",
+      "back": "Back to home",
+      "other_lang": "Español",
+      "section": "Projects",
+      "section_sub": "What already works and what we are testing. Each one is described by what it does.",
+      "more": "See the project",
+      "problem": "The problem",
+      "how": "How it works",
+      "does": "What it does",
+      "care": "How we keep it safe",
+      "demo": "Book a demo",
+      "demo_sub": "30 minutes. We show you how it works with a case like yours.",
+      "others": "Other projects",
+      "rights": "© 2026 Disrupthings · Mexico City",
+      "terms": "Terms (in Spanish)",
+      "privacy": "Privacy notice (in Spanish)",
+      "terms_href": "../terminos.html",
+      "privacy_href": "../privacidad.html"
+    }
+  },
+  "proyectos": [
+    {
+      "id": "escuelas",
+      "slug": { "es": "agentes-para-escuelas", "en": "school-agents" },
+      "demo": true,
+      "live": true,
+      "es": {
+        "status": "Piloto abierto",
+        "title": "Agentes para escuelas",
+        "lead": "Una acción del maestro se vuelve seguimiento personalizado para cada familia, por los canales que ya usan.",
+        "problem": "Lo que pasa en clase rara vez llega completo a casa, y el maestro no tiene tiempo de escribirle a cada familia. Antes de empezar el ciclo, casi nadie revisa si el libro elegido cubre el programa oficial.",
+        "how": [
+          ["El maestro da su clase", "Graba la clase desde el celular. La transcripción y las notas quedan guardadas por grupo y por tema."],
+          ["El sistema prepara el material", "Planes, exámenes, rúbricas y guías de estudio a partir del programa y de lo que se vio en clase. El maestro revisa y edita todo."],
+          ["Cada familia recibe lo suyo", "Una sola conversación de WhatsApp por familia, más avisos generales. Los avisos llegan cuando pasa algo: un examen, un tema que costó trabajo."]
+        ],
+        "does": [
+          "Revisa si el libro cubre el programa oficial y propone alternativas si no",
+          "Arma el plan del ciclo escolar, semana por semana",
+          "Genera exámenes y rúbricas que el maestro revisa y edita",
+          "Prepara guías de estudio y exámenes de práctica desde las notas de clase",
+          "Atiende las preguntas de las familias y pasa a la escuela lo que necesita una persona",
+          "Genera la lista de útiles y permite comprarla por WhatsApp, con personalización"
+        ],
+        "care": "El maestro aprueba todo lo que llega a las familias. Las prácticas se marcan como práctica, nunca como examen oficial."
+      },
+      "en": {
+        "status": "Open pilot",
+        "title": "School agents",
+        "lead": "One action from the teacher becomes personalized follow-up for every family, through the channels they already use.",
+        "problem": "What happens in class rarely reaches home in full, and teachers have no time to write to every family. Before the school year starts, almost no one checks whether the chosen textbook covers the official curriculum.",
+        "how": [
+          ["The teacher teaches", "They record the class from their phone. The transcript and notes are saved by group and by topic."],
+          ["The system prepares the material", "Plans, exams, rubrics and study guides, built from the curriculum and from what was covered in class. The teacher reviews and edits everything."],
+          ["Each family gets what is theirs", "One WhatsApp conversation per family, plus general announcements. Alerts arrive when something happens: an exam, a topic that was hard."]
+        ],
+        "does": [
+          "Checks whether the textbook covers the official curriculum and suggests alternatives if it does not",
+          "Builds the school-year plan, week by week",
+          "Generates exams and rubrics that the teacher reviews and edits",
+          "Prepares study guides and practice exams from class notes",
+          "Answers families' questions and hands the school anything that needs a person",
+          "Generates the school supply list and lets families buy it on WhatsApp, personalized"
+        ],
+        "care": "The teacher approves everything that reaches families. Practice material is labeled as practice, never as an official exam."
+      }
+    },
+    {
+      "id": "legal",
+      "slug": { "es": "asistente-legal", "en": "legal-assistant" },
+      "demo": true,
+      "live": true,
+      "es": {
+        "status": "Disponible",
+        "title": "Asistente legal para despachos",
+        "lead": "Atiende, califica y agenda las 24 horas. El abogado recibe cada caso resumido antes de la cita.",
+        "problem": "Las consultas llegan el viernes en la noche, el sábado temprano o el domingo, y nadie contesta hasta el lunes. Para entonces, el cliente ya buscó otro despacho.",
+        "how": [
+          ["Se configura para tu despacho", "Tus áreas de práctica, tus horarios, tus reglas y tu forma de hablar."],
+          ["Se conecta a tus canales", "WhatsApp, Instagram, Messenger, tu sitio web y tu correo."],
+          ["Trabaja todo el día", "Atiende, califica el caso, agenda la cita y le entrega al abogado el expediente resumido."]
+        ],
+        "does": [
+          "Primer contacto y calificación del caso, a cualquier hora",
+          "Agenda de citas con recordatorios",
+          "Expediente y documentos del cliente en orden",
+          "Borradores de escritos para revisión del abogado",
+          "Plazos y cálculos: liquidación laboral, pensión, plazos procesales",
+          "Seguimiento, retención y recomendaciones después del caso",
+          "Investigación de apoyo y reportes del despacho"
+        ],
+        "care": "Se presenta como asistente del despacho, nunca como persona. Solo responde dentro de cada área de práctica; en temas penales informa y conecta con el abogado. Todo borrador lo revisa un abogado antes de salir.",
+        "extra": "Condiciones de fundador para los primeros 10 despachos."
+      },
+      "en": {
+        "status": "Available",
+        "title": "Legal assistant for law firms",
+        "lead": "It answers, qualifies and books 24 hours a day. The lawyer gets every case summarized before the appointment.",
+        "problem": "Inquiries arrive Friday night, early Saturday or on Sunday, and nobody answers until Monday. By then the client has found another firm.",
+        "how": [
+          ["Set up for your firm", "Your practice areas, your hours, your rules and your tone."],
+          ["Connected to your channels", "WhatsApp, Instagram, Messenger, your website and your email."],
+          ["Works around the clock", "It answers, qualifies the case, books the appointment and hands the lawyer a summarized case file."]
+        ],
+        "does": [
+          "First contact and case qualification, at any hour",
+          "Appointment booking with reminders",
+          "Client case file and documents kept in order",
+          "Draft filings for the lawyer to review",
+          "Deadlines and calculations: severance, alimony, procedural deadlines",
+          "Follow-up, retention and referrals after the case",
+          "Supporting research and firm reports"
+        ],
+        "care": "It introduces itself as the firm's assistant, never as a person. It only answers within each practice area; on criminal matters it informs and connects with the lawyer. A lawyer reviews every draft before it goes out.",
+        "extra": "Founding terms for the first 10 firms."
+      }
+    },
+    {
+      "id": "titulacion",
+      "slug": { "es": "titulacion-por-experiencia", "en": "degree-by-experience" },
+      "demo": true,
+      "live": false,
+      "es": {
+        "status": "En desarrollo",
+        "title": "Título oficial por experiencia",
+        "lead": "Para quien ya sabe hacer su trabajo y quiere el título oficial: diagnóstico, estudio por temas y simulacro del examen, en un solo lugar.",
+        "problem": "En México se puede obtener un título oficial demostrando lo que ya sabes, por el Acuerdo 286 de la SEP. Pero la información está dispersa y no hay una forma clara de prepararse para el examen.",
+        "how": [
+          ["Diagnóstico", "Antes de estudiar, sabes qué temas ya dominas y cuáles no."],
+          ["Estudio por temas", "Un banco de preguntas por tema, escrito y revisado de antemano."],
+          ["Simulacro", "Un examen completo en tiempo real, para llegar sin sorpresas."]
+        ],
+        "does": [
+          "Explica el trámite paso a paso, con sus fuentes",
+          "Diagnóstico por tema antes de empezar",
+          "Banco de preguntas organizado por tema",
+          "Simulacro completo del examen en tiempo real",
+          "Ayuda a armar el expediente de admisión"
+        ],
+        "care": "Las preguntas se escriben y se revisan antes; no se inventan al momento. Cada dato del trámite lleva su fuente oficial."
+      },
+      "en": {
+        "status": "In development",
+        "title": "Official degree by experience",
+        "lead": "For people who already know their job and want the official degree: diagnosis, study by topic and a mock exam, in one place.",
+        "problem": "In Mexico you can earn an official degree by proving what you already know, through the SEP's Acuerdo 286. But the information is scattered and there is no clear way to prepare for the exam.",
+        "how": [
+          ["Diagnosis", "Before studying, you learn which topics you already master and which you do not."],
+          ["Study by topic", "A question bank per topic, written and reviewed in advance."],
+          ["Mock exam", "A full exam in real time, so there are no surprises."]
+        ],
+        "does": [
+          "Explains the process step by step, with its sources",
+          "Topic-by-topic diagnosis before you start",
+          "Question bank organized by topic",
+          "Full mock exam in real time",
+          "Helps you put together the admission file"
+        ],
+        "care": "Questions are written and reviewed in advance, never invented on the spot. Every fact about the process links to its official source."
+      }
+    },
+    {
+      "id": "reclamos",
+      "slug": { "es": "reclamos-de-vuelos", "en": "flight-claims" },
+      "demo": true,
+      "live": false,
+      "es": {
+        "status": "Experimento",
+        "title": "Reclamos de vuelos",
+        "lead": "Un agente que le reclama a la aerolínea por ti cuando tu vuelo se retrasa, pierden tu equipaje o te atienden mal. Solo cobra si recuperas algo.",
+        "problem": "Casi nadie reclama: el trámite es largo, cada aerolínea pide algo distinto y no queda claro cuánto te toca.",
+        "how": [
+          ["Nos cuentas qué pasó", "Subes tu pase de abordar y tus comprobantes."],
+          ["El agente reclama", "Arma el reclamo con lo que pide cada aerolínea, lo presenta y le da seguimiento."],
+          ["Solo cobra si ganas", "Si la aerolínea paga, nos quedamos con un porcentaje de lo recuperado."]
+        ],
+        "does": [
+          "Revisa si tu caso califica antes de empezar",
+          "Arma el reclamo con los documentos correctos",
+          "Presenta el reclamo y le da seguimiento",
+          "Te avisa en cada paso"
+        ],
+        "care": "Estamos investigando qué aerolíneas en México pagan sin llegar a un pleito, cuánto y en cuánto tiempo. La demo muestra el flujo completo."
+      },
+      "en": {
+        "status": "Experiment",
+        "title": "Flight claims",
+        "lead": "An agent that files your claim with the airline when your flight is delayed, your luggage is lost or the service is bad. It only charges if you recover something.",
+        "problem": "Almost nobody files a claim: the process is long, every airline asks for something different and it is unclear how much you are owed.",
+        "how": [
+          ["Tell us what happened", "Upload your boarding pass and receipts."],
+          ["The agent files the claim", "It builds the claim with what each airline asks for, submits it and follows up."],
+          ["It only charges if you win", "If the airline pays, we keep a percentage of what is recovered."]
+        ],
+        "does": [
+          "Checks whether your case qualifies before starting",
+          "Builds the claim with the right documents",
+          "Submits the claim and follows up",
+          "Keeps you posted at every step"
+        ],
+        "care": "We are researching which airlines in Mexico pay without going to court, how much and how fast. The demo shows the full flow."
+      }
+    },
+    {
+      "id": "acompanamiento",
+      "slug": { "es": "acompanamiento", "en": "companion" },
+      "demo": null,
+      "live": false,
+      "es": {
+        "status": "En investigación",
+        "title": "Acompañamiento para personas mayores",
+        "lead": "Agentes que acompañan a personas mayores o enfermas, conectados a sus relojes y sensores, y que avisan a su familia o a quien las cuida.",
+        "problem": "Muchas personas mayores pasan buena parte del día solas. La familia se entera tarde de lo que pasa, y quien las cuida no puede estar todo el tiempo.",
+        "how": [
+          ["Conversa con la persona", "Le hace compañía, le recuerda sus pendientes y la escucha."],
+          ["Se conecta a sus dispositivos", "Relojes inteligentes, sensores y otros aparatos de la casa."],
+          ["Avisa a quien importa", "La familia o el cuidador reciben lo necesario, cuando hace falta."]
+        ],
+        "does": [
+          "Compañía y conversación diaria",
+          "Recordatorios de pendientes y citas",
+          "Lectura de relojes inteligentes y sensores",
+          "Avisos a la familia o al cuidador"
+        ],
+        "care": "Maneja datos de salud, así que antes de lanzarlo pasa por una revisión legal completa.",
+        "soon": "Todavía no agendamos demos. Lo mostramos cuando termine la revisión."
+      },
+      "en": {
+        "status": "In research",
+        "title": "Companion for older adults",
+        "lead": "Agents that keep older or ill people company, connected to their watches and sensors, and that alert their family or caregivers.",
+        "problem": "Many older adults spend much of the day alone. Families learn late about what happens, and caregivers cannot be there all the time.",
+        "how": [
+          ["It talks with the person", "It keeps them company, reminds them of their tasks and listens."],
+          ["It connects to their devices", "Smartwatches, sensors and other devices at home."],
+          ["It alerts the people who matter", "Family or caregivers get what they need, when they need it."]
+        ],
+        "does": [
+          "Daily company and conversation",
+          "Reminders for tasks and appointments",
+          "Readings from smartwatches and sensors",
+          "Alerts to family or caregivers"
+        ],
+        "care": "It handles health data, so it goes through a full legal review before launch.",
+        "soon": "We are not booking demos yet. We will show it once the review is done."
+      }
+    },
+    {
+      "id": "evaluacion",
+      "slug": { "es": "evaluacion-de-ia", "en": "ai-evaluation" },
+      "demo": true,
+      "live": false,
+      "es": {
+        "status": "En desarrollo",
+        "title": "Evaluación de agentes de IA",
+        "lead": "Mide a tus agentes de IA antes de que salgan y mientras trabajan: calidad, costo y fallas, con números.",
+        "problem": "La mayoría de los agentes salen sin pruebas. Cuando algo falla, nadie sabe desde cuándo, a cuántos clientes afectó ni cuánto costó.",
+        "how": [
+          ["Pruebas antes de salir", "Casos de prueba y rúbricas por tarea, con una calificación clara."],
+          ["Cada cambio se revisa", "Una mejora no puede romper lo que ya funcionaba."],
+          ["Monitoreo en operación", "Calidad, costo y fallas de cada día, con alertas."]
+        ],
+        "does": [
+          "Conjuntos de prueba y rúbricas por tarea",
+          "Pruebas de regresión en cada cambio",
+          "Monitoreo diario de calidad, costo y fallas",
+          "Filtro rápido de sí o no antes de usar un modelo grande",
+          "Corre en tu equipo, sin sacar tus datos"
+        ],
+        "care": "Las pruebas y el monitoreo corren en tu equipo; tus datos no salen para medir."
+      },
+      "en": {
+        "status": "In development",
+        "title": "AI agent evaluation",
+        "lead": "Measure your AI agents before they launch and while they work: quality, cost and failures, in numbers.",
+        "problem": "Most agents launch untested. When something breaks, nobody knows since when, how many customers it affected or what it cost.",
+        "how": [
+          ["Tests before launch", "Test cases and rubrics per task, with a clear score."],
+          ["Every change is checked", "An improvement cannot break what already worked."],
+          ["Monitoring in production", "Daily quality, cost and failures, with alerts."]
+        ],
+        "does": [
+          "Test sets and rubrics per task",
+          "Regression tests on every change",
+          "Daily monitoring of quality, cost and failures",
+          "A fast yes-or-no check before calling a large model",
+          "Runs on your own equipment, without moving your data"
+        ],
+        "care": "Tests and monitoring run on your equipment; your data never leaves to be measured."
+      }
+    }
+  ]
+}
