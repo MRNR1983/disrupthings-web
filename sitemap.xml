@@ -1,11 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://disrupthings.com/</loc><lastmod>2026-10-13</lastmod>
+  <url><loc>https://disrupthings.com/</loc><lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/"/></url>
-  <url><loc>https://disrupthings.com/en/</loc><lastmod>2026-10-13</lastmod>
+  <url><loc>https://disrupthings.com/en/</loc><lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/"/></url>
+  <url><loc>https://disrupthings.com/proyectos/agentes-para-escuelas.html</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/proyectos/agentes-para-escuelas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/projects/school-agents.html"/></url>
+  <url><loc>https://disrupthings.com/en/projects/school-agents.html</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/proyectos/agentes-para-escuelas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/projects/school-agents.html"/></url>
+  <url><loc>https://disrupthings.com/proyectos/asistente-legal.html</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/proyectos/asistente-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/projects/legal-assistant.html"/></url>
+  <url><loc>https://disrupthings.com/en/projects/legal-assistant.html</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/proyectos/asistente-legal.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/projects/legal-assistant.html"/></url>
+  <url><loc>https://disrupthings.com/proyectos/titulacion-por-experiencia.html</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/proyectos/titulacion-por-experiencia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/projects/degree-by-experience.html"/></url>
+  <url><loc>https://disrupthings.com/en/projects/degree-by-experience.html</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/proyectos/titulacion-por-experiencia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/projects/degree-by-experience.html"/></url>
+  <url><loc>https://disrupthings.com/proyectos/reclamos-de-vuelos.html</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/proyectos/reclamos-de-vuelos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/projects/flight-claims.html"/></url>
+  <url><loc>https://disrupthings.com/en/projects/flight-claims.html</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/proyectos/reclamos-de-vuelos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/projects/flight-claims.html"/></url>
+  <url><loc>https://disrupthings.com/proyectos/acompanamiento.html</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/proyectos/acompanamiento.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/projects/companion.html"/></url>
+  <url><loc>https://disrupthings.com/en/projects/companion.html</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/proyectos/acompanamiento.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/projects/companion.html"/></url>
+  <url><loc>https://disrupthings.com/proyectos/evaluacion-de-ia.html</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/proyectos/evaluacion-de-ia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/projects/ai-evaluation.html"/></url>
+  <url><loc>https://disrupthings.com/en/projects/ai-evaluation.html</loc><lastmod>2026-10-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://disrupthings.com/proyectos/evaluacion-de-ia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://disrupthings.com/en/projects/ai-evaluation.html"/></url>
   <url><loc>https://disrupthings.com/privacidad.html</loc><lastmod>2026-10-13</lastmod></url>
   <url><loc>https://disrupthings.com/terminos.html</loc><lastmod>2026-10-13</lastmod></url>
 </urlset>
