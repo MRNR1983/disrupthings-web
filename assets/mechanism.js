@@ -3,8 +3,8 @@
   if (!host) return;
   var target = document.querySelector(host.getAttribute("data-assemble-at"));
   var NS = "http://www.w3.org/2000/svg";
-  var cta = document.querySelector(host.getAttribute("data-dock-at"));
-  var DOCK = window.innerWidth < 600 ? 90 : 150;
+  var wideDock = document.querySelector(host.getAttribute("data-dock-at"));
+  var spot = document.querySelector(host.getAttribute("data-dock-narrow"));
   var GAP = 14;
   var GROW = 0.9;
   var SHRINK = 0.4;
@@ -124,6 +124,9 @@
       var dock = reduce ? 1 : ease(clamp((progress - 0.86) / 0.12));
       var base = reduce ? 1 : 1 - SHRINK * ease(clamp(progress / 0.84));
       var tx = 0, ty = 0, sc = base;
+      var inSpot = !!(spot && spot.offsetHeight);
+      var cta = inSpot ? spot : wideDock;
+      var DOCK = window.innerWidth < 600 ? 90 : 150;
       if (dock > 0 && cta) {
         var b = cta.getBoundingClientRect();
         var w = m.svg.getBoundingClientRect().width / (m.scale || 1);
@@ -134,7 +137,7 @@
         var fy = (m.focus[1] - (data.viewBox[1] + data.viewBox[3] / 2)) * unit * sc;
         var half = m.focus[3] * unit * target / 2;
         var cx = b.right - half;
-        var cy = b.top - GAP - m.focus[4] * unit * target / 2;
+        var cy = inSpot ? b.top + b.height / 2 : b.top - GAP - m.focus[4] * unit * target / 2;
         tx = (cx - window.innerWidth / 2 - fx) * dock;
         ty = (cy - window.innerHeight / 2 - fy) * dock;
       }
