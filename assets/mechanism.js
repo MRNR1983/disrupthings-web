@@ -10,6 +10,13 @@
   var SHRINK = 0.4;
   var SPIN = 0.01;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var HAND = "https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap";
+  if (!document.querySelector('link[href="' + HAND + '"]')) {
+    var hl = document.createElement("link");
+    hl.rel = "stylesheet";
+    hl.href = HAND;
+    document.head.appendChild(hl);
+  }
 
   function el(name, attrs, parent) {
     var n = document.createElementNS(NS, name);
@@ -86,7 +93,8 @@
       var side = Math.cos(ang) >= 0 ? 1 : -1;
       var ex = L.c[0] + Math.cos(ang) * (r + 36);
       var ey = L.c[1] + Math.sin(ang) * (r + 36);
-      var ann = el("g", { "class": "ann" }, annLayer);
+      var hand = i % 3 === 1;
+      var ann = el("g", { "class": hand ? "ann hand" : "ann" }, annLayer);
       L.ann = ann;
       el("path", { d: "M" + L.c[0].toFixed(1) + " " + L.c[1].toFixed(1) + "L" + ex.toFixed(1) + " " + ey.toFixed(1) + "h" + (side * 70), "class": "lead" }, ann);
       el("circle", { cx: L.c[0].toFixed(1), cy: L.c[1].toFixed(1), r: 4, "class": "node" }, ann);
@@ -95,6 +103,11 @@
       var code = el("text", { x: tx.toFixed(1), y: (ey - 12).toFixed(1), "text-anchor": anchor, "class": "lbl" }, ann);
       code.textContent = "P-" + String(i + 1).padStart(2, "0") + "  \u00d8 " + (r * 2).toFixed(1);
       L.num = el("text", { x: tx.toFixed(1), y: (ey + 30).toFixed(1), "text-anchor": anchor, "class": "num" }, ann);
+      if (hand) {
+        var tilt = "rotate(" + (side * -4) + " " + tx.toFixed(1) + " " + ey.toFixed(1) + ")";
+        code.setAttribute("transform", tilt);
+        L.num.setAttribute("transform", tilt);
+      }
       L.shown = "";
     });
 
@@ -137,7 +150,7 @@
         L.layer.setAttribute("transform", "translate(" + (L.dx * k).toFixed(1) + " " + (L.dy * k).toFixed(1) + ") translate(" + L.c[0] + " " + L.c[1] + ") scale(" + s + ") translate(" + (-L.c[0]) + " " + (-L.c[1]) + ")");
         L.path.style.strokeDashoffset = (L.len * k).toFixed(0);
         L.ann.setAttribute("transform", "translate(" + (L.dx * k).toFixed(1) + " " + (L.dy * k).toFixed(1) + ")");
-        L.ann.style.opacity = (0.5 * Math.min(1, k * 4)).toFixed(3);
+        L.ann.style.opacity = (0.3 * Math.min(1, k * 4)).toFixed(3);
         if (L.num && progress < 0.86) {
           var dist = Math.sqrt(L.dx * L.dx + L.dy * L.dy) * k;
           var turn = ((L.depth * 180 + k * 360) % 360 + 360) % 360;
