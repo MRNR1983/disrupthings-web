@@ -153,8 +153,8 @@ html { scroll-behavior: smooth; scroll-padding-top: 16px; }
 .mechanism.assembled .marks path, .mechanism.assembled .grid { opacity: 0; }
 .mechanism .grid { transition: opacity 600ms ease; }
 .mechanism .grid-line { fill: none; stroke: var(--dot); stroke-width: 0.6; opacity: 0.05; }
-.mechanism .jewel { fill: var(--ink); fill-opacity: 0; transition: fill-opacity 600ms ease; }
-.mechanism.done .jewel { fill-opacity: 0.9; }
+.mechanism .layer .jewel { fill: var(--ink); fill-opacity: 0; transition: fill-opacity 600ms ease; }
+.mechanism.done .layer .jewel { fill-opacity: 0.9; }
 .mechanism.assembled .anns { opacity: 0; }
 .mechanism .anns { transition: opacity 600ms ease; }
 .mechanism .ann .lead { fill: none; stroke: var(--dot); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 3 4; }
