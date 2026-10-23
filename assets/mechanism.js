@@ -68,6 +68,7 @@
     var focus = [bb.x + bb.width / 2, bb.y + bb.height / 2, Math.max(bb.width, bb.height), bb.width, bb.height];
 
     var count = layers.length;
+    var annLayer = el("g", { "class": "anns" }, svg);
     layers.forEach(function (L, i) {
       var len = 0;
       try { len = L.path.getTotalLength(); } catch (e) { len = 0; }
@@ -80,6 +81,21 @@
       L.dx = Math.cos(angle) * reach;
       L.dy = Math.sin(angle) * reach - L.depth * 200;
       L.start = (i / count) * 0.5;
+      var r = Math.max(pb.width, pb.height) / 2;
+      var ang = angle + Math.PI * 0.75;
+      var side = Math.cos(ang) >= 0 ? 1 : -1;
+      var ex = L.c[0] + Math.cos(ang) * (r + 36);
+      var ey = L.c[1] + Math.sin(ang) * (r + 36);
+      var ann = el("g", { "class": "ann" }, annLayer);
+      L.ann = ann;
+      el("path", { d: "M" + L.c[0].toFixed(1) + " " + L.c[1].toFixed(1) + "L" + ex.toFixed(1) + " " + ey.toFixed(1) + "h" + (side * 70), "class": "lead" }, ann);
+      el("circle", { cx: L.c[0].toFixed(1), cy: L.c[1].toFixed(1), r: 4, "class": "node" }, ann);
+      var tx = ex + side * 78;
+      var anchor = side > 0 ? "start" : "end";
+      var code = el("text", { x: tx.toFixed(1), y: (ey - 12).toFixed(1), "text-anchor": anchor, "class": "lbl" }, ann);
+      code.textContent = "P-" + String(i + 1).padStart(2, "0") + "  \u00d8 " + (r * 2).toFixed(1);
+      L.num = el("text", { x: tx.toFixed(1), y: (ey + 30).toFixed(1), "text-anchor": anchor, "class": "num" }, ann);
+      L.shown = "";
     });
 
     return { focus: focus, svg: svg, grid: grid, marks: marks, layers: layers, rot: rot };
@@ -120,6 +136,14 @@
         var s = (1 + GROW * k).toFixed(4);
         L.layer.setAttribute("transform", "translate(" + (L.dx * k).toFixed(1) + " " + (L.dy * k).toFixed(1) + ") translate(" + L.c[0] + " " + L.c[1] + ") scale(" + s + ") translate(" + (-L.c[0]) + " " + (-L.c[1]) + ")");
         L.path.style.strokeDashoffset = (L.len * k).toFixed(0);
+        L.ann.setAttribute("transform", "translate(" + (L.dx * k).toFixed(1) + " " + (L.dy * k).toFixed(1) + ")");
+        L.ann.style.opacity = (0.5 * Math.min(1, k * 4)).toFixed(3);
+        if (L.num && progress < 0.86) {
+          var dist = Math.sqrt(L.dx * L.dx + L.dy * L.dy) * k;
+          var turn = ((L.depth * 180 + k * 360) % 360 + 360) % 360;
+          var txt = "\u0394 " + dist.toFixed(1) + "  \u00b7  " + turn.toFixed(1) + "\u00b0";
+          if (txt !== L.shown) { L.num.textContent = txt; L.shown = txt; }
+        }
       });
       var dock = reduce ? 1 : ease(clamp((progress - 0.86) / 0.12));
       var base = reduce ? 1 : 1 - SHRINK * ease(clamp(progress / 0.84));
