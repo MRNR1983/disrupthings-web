@@ -155,6 +155,12 @@ html { scroll-behavior: smooth; scroll-padding-top: 16px; }
 .mechanism .grid-line { fill: none; stroke: var(--ink); stroke-width: 0.6; opacity: 0.05; }
 .mechanism .jewel { fill: var(--dot); fill-opacity: 0; transition: fill-opacity 600ms ease; }
 .mechanism.done .jewel { fill-opacity: 0.9; }
+.mechanism.assembled .anns { opacity: 0; }
+.mechanism .anns { transition: opacity 600ms ease; }
+.mechanism .ann .lead { fill: none; stroke: var(--ink-soft); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 3 4; }
+.mechanism .ann .node { fill: var(--paper); stroke: var(--ink-soft); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.mechanism .ann text { font-family: var(--mono); font-size: 26px; fill: var(--ink-soft); letter-spacing: 0.04em; }
+.mechanism .ann .num { fill: var(--dot); }
 .dock-spot { display: none; }
 @media (max-width: 599.98px) { .dock-spot { display: block; height: 120px; } }
 
