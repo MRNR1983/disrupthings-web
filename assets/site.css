@@ -145,21 +145,21 @@ html { scroll-behavior: smooth; scroll-padding-top: 16px; }
 .mechanism { position: fixed; inset: 0; z-index: 0; pointer-events: none; display: flex; align-items: center; justify-content: center; overflow: hidden; opacity: 0; transition: opacity 800ms ease; }
 .mechanism.ready { opacity: 1; }
 .mechanism svg { width: min(64vw, 620px); height: auto; max-height: 86vh; overflow: visible; transform-origin: 50% 50%; will-change: transform; }
-.mechanism .layer path, .mechanism .marks path { fill: none; stroke: var(--ink); stroke-width: 1.2; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
-.mechanism .layer path { opacity: 0.12; transition: opacity 900ms ease; }
-.mechanism.done .layer path { opacity: 0.9; }
+.mechanism .layer path, .mechanism .marks path { fill: none; stroke: var(--dot); stroke-width: 0.6; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
+.mechanism .layer path { opacity: 0.25; transition: opacity 900ms ease, stroke-width 900ms ease; }
+.mechanism.done .layer path { opacity: 0.9; stroke-width: 1; }
 .mechanism .marks path { opacity: 0.12; transition: opacity 600ms ease; }
 .mechanism .marks .dim { stroke-dasharray: 4 6; }
 .mechanism.assembled .marks path, .mechanism.assembled .grid { opacity: 0; }
 .mechanism .grid { transition: opacity 600ms ease; }
-.mechanism .grid-line { fill: none; stroke: var(--ink); stroke-width: 0.6; opacity: 0.05; }
-.mechanism .jewel { fill: var(--dot); fill-opacity: 0; transition: fill-opacity 600ms ease; }
+.mechanism .grid-line { fill: none; stroke: var(--dot); stroke-width: 0.6; opacity: 0.05; }
+.mechanism .jewel { fill: var(--ink); fill-opacity: 0; transition: fill-opacity 600ms ease; }
 .mechanism.done .jewel { fill-opacity: 0.9; }
 .mechanism.assembled .anns { opacity: 0; }
 .mechanism .anns { transition: opacity 600ms ease; }
-.mechanism .ann .lead { fill: none; stroke: var(--ink-soft); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 3 4; }
-.mechanism .ann .node { fill: var(--paper); stroke: var(--ink-soft); stroke-width: 1; vector-effect: non-scaling-stroke; }
-.mechanism .ann text { font-family: var(--mono); font-size: 18px; fill: var(--ink-soft); letter-spacing: 0.04em; }
+.mechanism .ann .lead { fill: none; stroke: var(--dot); stroke-width: 1; vector-effect: non-scaling-stroke; stroke-dasharray: 3 4; }
+.mechanism .ann .node { fill: var(--paper); stroke: var(--dot); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.mechanism .ann text { font-family: var(--mono); font-size: 18px; fill: var(--dot); letter-spacing: 0.04em; }
 .mechanism .ann.hand text { font-family: "Caveat", "Bradley Hand", "Segoe Print", cursive; font-size: 27px; letter-spacing: 0; }
 .mechanism .ann .num { fill: var(--dot); }
 .dock-spot { display: none; }
@@ -167,7 +167,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 16px; }
 
 @media (max-width: 860px) {
   .mechanism svg { width: 96vw; }
-  .mechanism .layer path { opacity: 0.09; }
+  .mechanism .layer path { opacity: 0.2; }
   .mechanism.done .layer path { opacity: 0.9; }
 }
 @media (prefers-reduced-motion: reduce) {
