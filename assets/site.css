@@ -162,6 +162,8 @@ html { scroll-behavior: smooth; scroll-padding-top: 16px; }
 .mechanism .ann text { font-family: var(--mono); font-size: 18px; fill: var(--dot); letter-spacing: 0.04em; }
 .mechanism .ann.hand text { font-family: "Caveat", "Bradley Hand", "Segoe Print", cursive; font-size: 27px; letter-spacing: 0; }
 .mechanism .ann .num { fill: var(--dot); }
+.mechanism .ann.hand text { fill: var(--ink-soft); }
+.mechanism .ann.hand .lead, .mechanism .ann.hand .node { stroke: var(--ink-soft); }
 .dock-spot { display: none; }
 @media (max-width: 599.98px) { .dock-spot { display: block; height: 120px; } }
 
