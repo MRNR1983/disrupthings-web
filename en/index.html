@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="../assets/site.css?v=2026102001">
 </head>
 <body>
-<canvas id="tesseract" class="bg-tess" aria-hidden="true"></canvas>
+<div class="mechanism" id="mechanism" data-assemble-at="#contact" data-dock-at="#book" data-dock-narrow="#dock-spot" data-outline="../assets/models/escape-outline.json" aria-hidden="true"></div>
 <div class="app">
   <header class="top">
     <a class="mark" href="./">Disrupthings<span>.</span></a>
@@ -36,7 +36,7 @@
       <a class="lang" href="../" hreflang="es-MX" lang="es">Español</a>
     </nav>
   </header>
-  <main class="track" id="track" tabindex="0" aria-label="Content, scrolls from left to right">
+  <main class="track" id="track" aria-label="Content">
     <section data-name="Home" class="panel hero"><div class="pin">
       <h1>AI agents that take on your company's work.</h1>
       <p>Running in 3 weeks at most, with a fixed date in writing. And a Latin American lab building its own AI products, fast and measuring everything.</p>
@@ -147,8 +147,9 @@
       <div class="contact-row">
         <code id="mail">disrupthings@disrupthings.com</code>
         <button class="copy" id="copy" type="button" data-idle="Copy" data-copied="Copied" data-manual="Select and copy"><span id="copy-label">Copy</span></button>
-        <a class="btn" href="https://calendly.com/disrupthings/diagnostico" target="_blank" rel="noopener">Book a call</a>
+        <a class="btn" id="book" href="https://calendly.com/disrupthings/diagnostico" target="_blank" rel="noopener">Book a call</a>
       </div>
+      <div class="dock-spot" id="dock-spot" aria-hidden="true"></div>
       <footer>
         <span>© 2026 Disrupthings · Mexico City</span>
         <nav aria-label="Legal">
@@ -158,15 +159,8 @@
       </footer>
     </div></section>
   </main>
-  <nav class="pager" id="pager" aria-label="Sections">
-    <span class="label" id="pagerLbl">01 · Home</span>
-    <div class="pdots" id="pdots"></div>
-    <div class="parrows">
-      <button class="parrow" id="pPrev" type="button" aria-label="Previous section"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
-      <button class="parrow" id="pNext" type="button" aria-label="Next section"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
-    </div>
-  </nav>
 </div>
-<script src="../assets/site.js?v=2026101903"></script>
+<script src="../assets/site.js?v=2026102301"></script>
+<script src="../assets/mechanism.js?v=2026102301"></script>
 </body>
 </html>
