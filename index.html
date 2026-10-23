@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="assets/site.css?v=2026102001">
 </head>
 <body>
-<canvas id="tesseract" class="bg-tess" aria-hidden="true"></canvas>
+<div class="mechanism" id="mechanism" data-assemble-at="#contacto" data-dock-at="#book" data-dock-narrow="#dock-spot" data-outline="assets/models/escape-outline.json" aria-hidden="true"></div>
 <div class="app">
   <header class="top">
     <a class="mark" href="./">Disrupthings<span>.</span></a>
@@ -36,7 +36,7 @@
       <a class="lang" href="en/" hreflang="en" lang="en">English</a>
     </nav>
   </header>
-  <main class="track" id="track" tabindex="0" aria-label="Contenido, se recorre de izquierda a derecha">
+  <main class="track" id="track" aria-label="Contenido">
     <section data-name="Portada" class="panel hero"><div class="pin">
       <h1>Agentes de IA que hacen trabajo de tu empresa.</h1>
       <p>Funcionando en máximo 3 semanas, con fecha fija por escrito. Y un laboratorio latinoamericano que construye productos propios con IA, rápido y midiendo todo.</p>
@@ -147,8 +147,9 @@
       <div class="contact-row">
         <code id="mail">disrupthings@disrupthings.com</code>
         <button class="copy" id="copy" type="button" data-idle="Copiar" data-copied="Copiado" data-manual="Selecciona y copia"><span id="copy-label">Copiar</span></button>
-        <a class="btn" href="https://calendly.com/disrupthings/diagnostico" target="_blank" rel="noopener">Agendar una llamada</a>
+        <a class="btn" id="book" href="https://calendly.com/disrupthings/diagnostico" target="_blank" rel="noopener">Agendar una llamada</a>
       </div>
+      <div class="dock-spot" id="dock-spot" aria-hidden="true"></div>
       <footer>
         <span>© 2026 Disrupthings · Ciudad de México</span>
         <nav aria-label="Legal">
@@ -158,15 +159,8 @@
       </footer>
     </div></section>
   </main>
-  <nav class="pager" id="pager" aria-label="Secciones">
-    <span class="label" id="pagerLbl">01 · Portada</span>
-    <div class="pdots" id="pdots"></div>
-    <div class="parrows">
-      <button class="parrow" id="pPrev" type="button" aria-label="Sección anterior"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
-      <button class="parrow" id="pNext" type="button" aria-label="Sección siguiente"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
-    </div>
-  </nav>
 </div>
-<script src="assets/site.js?v=2026101903"></script>
+<script src="assets/site.js?v=2026102301"></script>
+<script src="assets/mechanism.js?v=2026102301"></script>
 </body>
 </html>
