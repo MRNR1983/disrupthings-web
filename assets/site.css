@@ -34,7 +34,7 @@
 html, body { margin: 0; }
 body {
   background-color: var(--paper);
-  background-image: radial-gradient(circle at 1px 1px, var(--grid) 1px, transparent 1.5px);
+  background-image: radial-gradient(circle at 1px 1px, var(--grid) 0.55px, transparent 0.9px);
   background-size: 24px 24px;
   color: var(--ink);
   font-family: var(--body);
