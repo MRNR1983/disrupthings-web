@@ -138,37 +138,34 @@ footer a { text-decoration: none; }
   .cols.c2 { grid-template-columns: minmax(0, 1fr); }
 }
 
-.bg-tess { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.16; display: block; }
 .app { position: relative; z-index: 1; }
-.pager { display: none; }
+.track > .panel > .pin { max-width: 1040px; margin-inline: auto; }
+html { scroll-behavior: smooth; scroll-padding-top: 16px; }
 
-@media (min-width: 900px) and (hover: hover) {
-  .home, .home body { height: 100%; overflow: hidden; }
-  .app { height: 100%; display: flex; flex-direction: column; }
-  .app .top { flex-shrink: 0; padding-block: 22px; }
-  .track { flex: 1; min-height: 0; display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; }
-  .track::-webkit-scrollbar { display: none; }
-  .track:focus-visible { outline: none; }
-  .track > .panel { flex: 0 0 100%; scroll-snap-align: start; overflow-y: auto; padding-block: clamp(16px, 4vh, 48px); padding-inline: clamp(16px, 4vw, 56px); border-top: 0; border-left: 1px solid var(--line); }
-  .track > .panel:first-child { border-left: 0; }
-  .track > .panel > .pin { max-width: 1040px; margin-inline: auto; min-height: 100%; display: flex; flex-direction: column; justify-content: center; }
-  .track > .panel footer { margin-top: 56px; }
-  .pager { display: flex; align-items: center; gap: 20px; padding-block: 14px 18px; border-top: 1px solid var(--line); flex-shrink: 0; max-width: 1040px; margin-inline: auto; width: 100%; }
-  .pager .label { min-width: 15ch; }
-  .pdots { flex: 1; display: flex; gap: 6px; }
-  .pdots button { flex: 1; height: 14px; border: 0; padding: 6px 0; background: var(--line); background-clip: content-box; cursor: pointer; }
-  .pdots button.on { background-color: var(--ink); }
-  .parrows { display: flex; gap: 8px; }
-  .parrow { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--ink); display: grid; place-items: center; cursor: pointer; padding: 0; }
-  .parrow svg { width: 18px; height: 18px; stroke: currentColor; }
-  .parrow:disabled { color: var(--line); cursor: default; }
-  .parrow:not(:disabled):hover { border-color: var(--ink); }
-}
-@media (max-width: 899px), (hover: none) {
-  .bg-tess { opacity: 0.1; }
+.mechanism { position: fixed; inset: 0; z-index: 0; pointer-events: none; display: flex; align-items: center; justify-content: center; overflow: hidden; opacity: 0; transition: opacity 800ms ease; }
+.mechanism.ready { opacity: 1; }
+.mechanism svg { width: min(64vw, 620px); height: auto; max-height: 86vh; overflow: visible; transform-origin: 50% 50%; will-change: transform; }
+.mechanism .layer path, .mechanism .marks path { fill: none; stroke: var(--ink); stroke-width: 1.2; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-linejoin: round; }
+.mechanism .layer path { opacity: 0.12; transition: opacity 900ms ease; }
+.mechanism.done .layer path { opacity: 0.9; }
+.mechanism .marks path { opacity: 0.12; transition: opacity 600ms ease; }
+.mechanism .marks .dim { stroke-dasharray: 4 6; }
+.mechanism.assembled .marks path, .mechanism.assembled .grid { opacity: 0; }
+.mechanism .grid { transition: opacity 600ms ease; }
+.mechanism .grid-line { fill: none; stroke: var(--ink); stroke-width: 0.6; opacity: 0.05; }
+.mechanism .jewel { fill: var(--dot); fill-opacity: 0; transition: fill-opacity 600ms ease; }
+.mechanism.done .jewel { fill-opacity: 0.9; }
+.dock-spot { display: none; }
+@media (max-width: 599.98px) { .dock-spot { display: block; height: 120px; } }
+
+@media (max-width: 860px) {
+  .mechanism svg { width: 96vw; }
+  .mechanism .layer path { opacity: 0.09; }
+  .mechanism.done .layer path { opacity: 0.9; }
 }
 @media (prefers-reduced-motion: reduce) {
   .route li { transition: none; }
+  html { scroll-behavior: auto; }
 }
 
 .top nav a.lang { color: var(--ink-soft); }
